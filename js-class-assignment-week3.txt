@@ -1,0 +1,120 @@
+<!--Emoji changing on hover-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="closed" style="font-size:150px;">🙈</span>
+</body>
+<script>
+    var x=document.getElementById("closed");
+    x.addEventListener("mouseover",mouseover);
+    x.addEventListener("mouseout",mouseout);
+    function mouseover(){
+        document.getElementById("closed").innerText="🙉";
+    }
+
+    function mouseout(){
+        document.getElementById("closed").innerText="🙈";
+    }
+
+</script>
+</html>
+
+----------------------------------------------------------------------------------------
+<!--Circle Enlargement on hover-->
+<html>
+    <head>
+        <title>circle</title>
+    </head>
+    <style>
+        .container{
+            border-radius: 50%;
+            background-color: lightsalmon;
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+        }
+
+        .hover {
+            border-radius: 100%;
+            background-color: lightblue;
+            width: 300px;
+            height: 300px;
+            border:1px solid black;
+        }
+
+
+    </style>
+    <body>
+        <div class= container>
+            
+        </div>
+    </body>
+    <script>
+        var container_dom = document.getElementsByClassName("container")[0];
+        container_dom.addEventListener("mouseover", function(){
+            container_dom.className = "hover";
+        })
+
+        container_dom.addEventListener("mouseout", function(){
+            container_dom.className = "container";
+        })
+    </script>
+</html>
+-----------------------------------------------------------------------------------------
+<!--hexadecimal color generator-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hexadecimal color generator</title>
+	<style>
+		#container{
+			margin: auto;
+    		width: 35%;
+			padding: 3%;
+    		margin-top: 10%;
+			justify-content: center;
+			display: block;
+			align-items: center;
+			text-align: center;
+			background-color: white;
+		}
+		#generate{
+			padding: 10px;
+		}
+	</style>
+</head>
+<body id="body">
+	<div id ="container">
+	<h1>Hexadecimal Color Generator</h1>
+	<button id="generate" value="Click me" onclick="generate()">Click Me!</button>
+	<h3 id="code"></h3>
+	</div>
+</body>
+<script>
+	function generate(){
+	
+		var letters = "0123456789ABCDEF";
+	
+		var color = '#';
+	
+		for (var i = 0; i < 6; i++)
+			color += letters[(Math.floor(Math.random() * 16))];
+	
+		var b=document.getElementById("body");
+		var p=document.getElementById("code");
+		p.innerText=color;
+
+		b.style.backgroundColor=`${color}`;
+	}
+</script>
+</html>
