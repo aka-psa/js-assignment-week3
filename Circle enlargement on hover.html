@@ -1,0 +1,40 @@
+<!--Circle Enlargement on hover-->
+<html>
+    <head>
+        <title>circle</title>
+    </head>
+    <style>
+        .container{
+            border-radius: 50%;
+            background-color: lightsalmon;
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+        }
+
+        .hover {
+            border-radius: 100%;
+            background-color: lightblue;
+            width: 300px;
+            height: 300px;
+            border:1px solid black;
+        }
+
+
+    </style>
+    <body>
+        <div class= container>
+            
+        </div>
+    </body>
+    <script>
+        var container_dom = document.getElementsByClassName("container")[0];
+        container_dom.addEventListener("mouseover", function(){
+            container_dom.className = "hover";
+        })
+
+        container_dom.addEventListener("mouseout", function(){
+            container_dom.className = "container";
+        })
+    </script>
+</html>

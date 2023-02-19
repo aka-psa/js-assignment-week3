@@ -1,0 +1,27 @@
+<!--Emoji changing on hover-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="closed" style="font-size:150px;">🙈</span>
+</body>
+<script>
+    var x=document.getElementById("closed");
+    x.addEventListener("mouseover",mouseover);
+    x.addEventListener("mouseout",mouseout);
+    function mouseover(){
+        document.getElementById("closed").innerText="🙉";
+    }
+
+    function mouseout(){
+        document.getElementById("closed").innerText="🙈";
+    }
+
+</script>
+</html>
